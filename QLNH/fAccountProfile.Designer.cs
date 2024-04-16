@@ -67,18 +67,18 @@
             // 
             // txbUsername
             // 
-            this.txbUsername.Location = new System.Drawing.Point(197, 16);
+            this.txbUsername.Location = new System.Drawing.Point(213, 16);
             this.txbUsername.Name = "txbUsername";
-            this.txbUsername.Size = new System.Drawing.Size(509, 22);
+            this.txbUsername.Size = new System.Drawing.Size(493, 22);
             this.txbUsername.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(16, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 27);
+            this.label1.Size = new System.Drawing.Size(151, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên đăng nhập";
             // 
@@ -115,18 +115,18 @@
             // 
             // txbDisplayname
             // 
-            this.txbDisplayname.Location = new System.Drawing.Point(197, 16);
+            this.txbDisplayname.Location = new System.Drawing.Point(213, 16);
             this.txbDisplayname.Name = "txbDisplayname";
-            this.txbDisplayname.Size = new System.Drawing.Size(509, 22);
+            this.txbDisplayname.Size = new System.Drawing.Size(493, 22);
             this.txbDisplayname.TabIndex = 1;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(16, 16);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(108, 27);
+            this.label5.Size = new System.Drawing.Size(124, 26);
             this.label5.TabIndex = 0;
             this.label5.Text = "Tên hiển thị";
             // 
@@ -141,18 +141,18 @@
             // 
             // txbFullname
             // 
-            this.txbFullname.Location = new System.Drawing.Point(197, 16);
+            this.txbFullname.Location = new System.Drawing.Point(213, 16);
             this.txbFullname.Name = "txbFullname";
-            this.txbFullname.Size = new System.Drawing.Size(509, 22);
+            this.txbFullname.Size = new System.Drawing.Size(493, 22);
             this.txbFullname.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(16, 16);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 27);
+            this.label2.Size = new System.Drawing.Size(101, 26);
             this.label2.TabIndex = 0;
             this.label2.Text = "Họ và tên";
             // 
@@ -167,18 +167,19 @@
             // 
             // txbPassword
             // 
-            this.txbPassword.Location = new System.Drawing.Point(197, 16);
+            this.txbPassword.Location = new System.Drawing.Point(213, 16);
             this.txbPassword.Name = "txbPassword";
-            this.txbPassword.Size = new System.Drawing.Size(509, 22);
+            this.txbPassword.Size = new System.Drawing.Size(493, 22);
             this.txbPassword.TabIndex = 1;
+            this.txbPassword.UseSystemPasswordChar = true;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(16, 16);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 27);
+            this.label3.Size = new System.Drawing.Size(99, 26);
             this.label3.TabIndex = 0;
             this.label3.Text = "Mật khẩu";
             // 
@@ -195,16 +196,17 @@
             // 
             this.txbCPassword.Location = new System.Drawing.Point(213, 16);
             this.txbCPassword.Name = "txbCPassword";
-            this.txbCPassword.Size = new System.Drawing.Size(509, 22);
+            this.txbCPassword.Size = new System.Drawing.Size(493, 22);
             this.txbCPassword.TabIndex = 1;
+            this.txbCPassword.UseSystemPasswordChar = true;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial Narrow", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(17, 17);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(165, 26);
+            this.label4.Size = new System.Drawing.Size(182, 26);
             this.label4.TabIndex = 0;
             this.label4.Text = "Nhập lại mật khẩu";
             // 
@@ -219,18 +221,19 @@
             // 
             // txbNewPassword
             // 
-            this.txbNewPassword.Location = new System.Drawing.Point(197, 21);
+            this.txbNewPassword.Location = new System.Drawing.Point(213, 21);
             this.txbNewPassword.Name = "txbNewPassword";
-            this.txbNewPassword.Size = new System.Drawing.Size(509, 22);
+            this.txbNewPassword.Size = new System.Drawing.Size(493, 22);
             this.txbNewPassword.TabIndex = 1;
+            this.txbNewPassword.UseSystemPasswordChar = true;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(16, 16);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(124, 27);
+            this.label6.Size = new System.Drawing.Size(141, 26);
             this.label6.TabIndex = 0;
             this.label6.Text = "Mật khẩu mới";
             // 

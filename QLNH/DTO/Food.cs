@@ -9,12 +9,13 @@ namespace QLNH.DAO
 {
     public class Food
     {
-        public Food(int id, string foodname, float price, int cateID)
+        public Food(int id, string foodname, float price, int cateID, string foodImg)
         {
             this.ID = id;
             this.FoodName = foodname;
             this.Price = price;
             this.CateID = cateID;
+            this.FoodImg = foodImg;
         }
 
         public Food(DataRow row)
@@ -23,6 +24,7 @@ namespace QLNH.DAO
             this.FoodName = row["menu_name"].ToString();
             this.Price = (float)Convert.ToDouble(row["menu_price"].ToString());
             this.CateID = (int)row["cate_id"];
+            this.FoodImg = row["menu_img"].ToString();
         }
 
         private int iD;
@@ -54,5 +56,14 @@ namespace QLNH.DAO
             set { cateID = value; }
         }
 
+        public string foodImg;
+        public string FoodImg
+        {
+            get { return foodImg; }
+            set
+            {
+                foodImg = value;
+            }
+        }
     }
 }

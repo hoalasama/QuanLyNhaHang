@@ -31,6 +31,7 @@ namespace QLNH
             LoadTable();
             LoadCategory();
         }
+
         void ChangeAccount(int role)
         {
             //adminToolStripMenuItem.Enabled = role == 1;
@@ -95,7 +96,6 @@ namespace QLNH
             txbTotalPrice.Text = totalPrice.ToString(formatString, culture);
         }
 
-
         void btn_Click(object sender, EventArgs e)
         {
             int tableID = ((sender as Button).Tag as Table).ID;
@@ -111,29 +111,23 @@ namespace QLNH
             {
                 return;
             }
+
             Category selected = cb.SelectedItem as Category;
             id = selected.ID;
-            LoadFoodListByCategoryID(id);
-        }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
+            List<Food> listFood = FoodDAO.Instance.GetFoodByCategoryID(id);
 
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbFood_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-
+            if (listFood.Count == 0)
+            {
+                cbFood.DataSource = null;  
+                cbFood.Items.Add("Không có"); 
+                cbFood.SelectedIndex = 0; 
+            }
+            else
+            {
+                cbFood.DataSource = listFood;
+                cbFood.DisplayMember = "FoodName";
+            }
         }
 
         private void btnCheckOut_Click(object sender, EventArgs e)
@@ -170,13 +164,20 @@ namespace QLNH
                 MessageBox.Show("Chọn bàn");
                 return;
             }
+
+            if (cbFood.SelectedItem.ToString() == "Không có")
+            {
+                MessageBox.Show("Không có món ăn nào trong danh mục này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             int idBill = BillDAO.Instance.GetUncheckBillIDByTableID(table.ID);
             int foodID = (cbFood.SelectedItem as Food).ID;
             int quantity = (int)nmFoodCount.Value;
 
             if (quantity == 0)
             {
-                MessageBox.Show("Số lượng được thêm vào không được bằng 0", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Món ăn đó chưa được thêm vào và số lượng được thêm vào không được là số âm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

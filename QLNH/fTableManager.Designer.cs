@@ -168,7 +168,6 @@
             0,
             0,
             0});
-            this.nmFoodCount.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // btnAdd
             // 
@@ -188,7 +187,6 @@
             this.cbFood.Name = "cbFood";
             this.cbFood.Size = new System.Drawing.Size(225, 24);
             this.cbFood.TabIndex = 1;
-            this.cbFood.SelectedIndexChanged += new System.EventHandler(this.cbFood_SelectedIndexChanged);
             // 
             // cbCategory
             // 
@@ -261,7 +259,6 @@
             this.Name = "fTableManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phần mềm quản lý nhà hàng";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();

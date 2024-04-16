@@ -11,16 +11,3 @@ D:\Labnhóm\DotNet\code\QLNH\QLNH\obj\Debug\QLNH.pdb
 D:\Labnhóm\DotNet\code\QLNH\QLNH\obj\Debug\QLNH.fTableManager.resources
 D:\Labnhóm\DotNet\code\QLNH\QLNH\obj\Debug\QLNH.fAccountProfile.resources
 D:\Labnhóm\DotNet\code\QLNH\QLNH\obj\Debug\QLNH.fAdmin.resources
-D:\study\slide\2023-2024 - HKII\.net\group\QLNH\QLNH\bin\Debug\QLNH.exe.config
-D:\study\slide\2023-2024 - HKII\.net\group\QLNH\QLNH\bin\Debug\QLNH.exe
-D:\study\slide\2023-2024 - HKII\.net\group\QLNH\QLNH\bin\Debug\QLNH.pdb
-D:\study\slide\2023-2024 - HKII\.net\group\QLNH\QLNH\obj\Debug\QLNH.csproj.AssemblyReference.cache
-D:\study\slide\2023-2024 - HKII\.net\group\QLNH\QLNH\obj\Debug\QLNH.fAccountProfile.resources
-D:\study\slide\2023-2024 - HKII\.net\group\QLNH\QLNH\obj\Debug\QLNH.fAdmin.resources
-D:\study\slide\2023-2024 - HKII\.net\group\QLNH\QLNH\obj\Debug\QLNH.fLogin.resources
-D:\study\slide\2023-2024 - HKII\.net\group\QLNH\QLNH\obj\Debug\QLNH.fTableManager.resources
-D:\study\slide\2023-2024 - HKII\.net\group\QLNH\QLNH\obj\Debug\QLNH.Properties.Resources.resources
-D:\study\slide\2023-2024 - HKII\.net\group\QLNH\QLNH\obj\Debug\QLNH.csproj.GenerateResource.cache
-D:\study\slide\2023-2024 - HKII\.net\group\QLNH\QLNH\obj\Debug\QLNH.csproj.CoreCompileInputs.cache
-D:\study\slide\2023-2024 - HKII\.net\group\QLNH\QLNH\obj\Debug\QLNH.exe
-D:\study\slide\2023-2024 - HKII\.net\group\QLNH\QLNH\obj\Debug\QLNH.pdb

@@ -6,7 +6,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -25,7 +27,14 @@ namespace QLNH
             LoadData();
             txbFoodID.Enabled = false;
             txbCategoryID.Enabled = false;
-            cbTableStatus.Enabled = false;
+            txbTableID.Enabled = false;
+            txbTableStatus.Enabled = false;
+        }
+
+        List<Food> SearchFoodByName(string name)
+        {
+            List<Food> listFood = FoodDAO.Instance.SearchFoodByName(name);
+            return listFood;
         }
 
         void LoadData()
@@ -53,35 +62,12 @@ namespace QLNH
 
         }
 
-        void LoadFoodList()
-        {
-            string query = "SELECT * FROM MENU";
-
-            foodList.DataSource = DataProvider.Instance.ExecuteQuery(query);
-
-        }
-
-        void LoadCategoryList()
-        {
-            string query = "SELECT * FROM CATEGORY";
-
-            categoryList.DataSource = DataProvider.Instance.ExecuteQuery(query);
-
-        }
-
-        void LoadTableList()
-        {
-            string query = "SELECT * FROM TABLES";
-
-            categoryList.DataSource = DataProvider.Instance.ExecuteQuery(query);
-
-        }
-
         void AddFoodBinding()
         {
             txbFoodName.DataBindings.Add(new Binding("Text", dtgvFood.DataSource, "FoodName", true, DataSourceUpdateMode.Never));
             txbFoodID.DataBindings.Add(new Binding("Text", dtgvFood.DataSource, "ID", true, DataSourceUpdateMode.Never));
             nmFoodPrice.DataBindings.Add(new Binding("Value", dtgvFood.DataSource, "Price", true, DataSourceUpdateMode.Never));
+            pbFoodImage.DataBindings.Add(new Binding("ImageLocation", dtgvFood.DataSource, "FoodImg", true, DataSourceUpdateMode.Never));
         }
 
         void AddCategoryBinding() 
@@ -94,6 +80,7 @@ namespace QLNH
         {
             txbTableName.DataBindings.Add(new Binding("Text", dtgvTable.DataSource, "Name", true, DataSourceUpdateMode.Never));
             txbTableID.DataBindings.Add(new Binding("Text", dtgvTable.DataSource, "ID", true, DataSourceUpdateMode.Never));
+            txbTableStatus.DataBindings.Add(new Binding("Text", dtgvTable.DataSource, "Status", true, DataSourceUpdateMode.Never));
         }
 
         void LoadCategoryToCombobox(ComboBox cb)
@@ -116,7 +103,12 @@ namespace QLNH
 
         void LoadListFood()
         {
-            foodList.DataSource = FoodDAO.Instance.GetListFood();
+            string basePath = @"D:\Labnhóm\DotNet\code\img\";
+            foodList.DataSource = FoodDAO.Instance.GetListFood().Select(f =>
+            {
+                f.FoodImg = Path.Combine(basePath, f.FoodImg); 
+                return f;
+            });
         }
 
         void LoadListCategory()
@@ -172,6 +164,27 @@ namespace QLNH
             
         }
 
+        private string foodImagePath;
+
+        private void btnOpenPicture_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Title = "Mời bạn chọn ảnh";
+            ofd.Filter = "JPG|*.JPG|PNG|*.PNG|Tất cả|*.*";
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                foodImagePath = ofd.FileName;
+                try
+                {
+                    pbFoodImage.Image = Image.FromFile(foodImagePath);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Có lỗi khi hiển thị ảnh: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
         private void btnAddFood_Click(object sender, EventArgs e)
         {
             string name = txbFoodName.Text;
@@ -184,7 +197,7 @@ namespace QLNH
                 return;
             }
 
-            if (FoodDAO.Instance.InsertFood(name, price, categoryID))
+            if (FoodDAO.Instance.InsertFood(name, price, categoryID, foodImagePath))
             {
                 MessageBox.Show("Thêm thành công");
                 LoadListFood();
@@ -195,17 +208,25 @@ namespace QLNH
             }
         }
 
+
         private void btnUpdateFood_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(txbFoodID.Text);
             string name = txbFoodName.Text;
             float price = (float)nmFoodPrice.Value;
             int categoryID = (cbCategory.SelectedItem as Category).ID;
+            string imageName = Path.GetFileName(foodImagePath); 
 
-            if (FoodDAO.Instance.UpdateFood(id, name, price, categoryID))
+            if (string.IsNullOrEmpty(foodImagePath))
+            {
+                imageName = (string)dtgvFood.SelectedCells[0].OwningRow.Cells["FoodImg"].Value;
+            }
+
+            if (FoodDAO.Instance.UpdateFood(id, name, price, categoryID, "'" + imageName + "'"))
             {
                 MessageBox.Show("Chỉnh sửa thông tin thành công");
                 LoadListFood();
+
                 if (updateFood != null)
                 {
                     updateFood(this, new EventArgs());
@@ -234,6 +255,16 @@ namespace QLNH
             {
                 MessageBox.Show("Có lỗi khi xóa");
             }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string basePath = @"D:\Labnhóm\DotNet\code\img\";
+            foodList.DataSource = SearchFoodByName(txbSearchFoodName.Text).Select(f =>
+            {
+                f.FoodImg = Path.Combine(basePath, f.FoodImg);
+                return f;
+            });
         }
 
         private void btnAddCategory_Click(object sender, EventArgs e)
@@ -393,8 +424,8 @@ namespace QLNH
 
         public event EventHandler UpdateFood
         {
-            add { insertFood += value; }
-            remove { insertFood -= value; }
+            add { updateFood += value; }
+            remove { updateFood -= value; }
         }
 
         private event EventHandler insertCategory;
@@ -445,5 +476,6 @@ namespace QLNH
             remove { updateTable -= value; }
         }
 
+        
     }
 }
