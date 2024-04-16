@@ -103,7 +103,7 @@ namespace QLNH
 
         void LoadListFood()
         {
-            string basePath = @"D:\Labnhóm\DotNet\code\img\";
+            string basePath = @"D:\study\slide\2023-2024 - HKII\.net\QuanLyNhaHang\img";
             foodList.DataSource = FoodDAO.Instance.GetListFood().Select(f =>
             {
                 f.FoodImg = Path.Combine(basePath, f.FoodImg); 
@@ -165,6 +165,7 @@ namespace QLNH
         }
 
         private string foodImagePath;
+        private bool hasNewImage = false;
 
         private void btnOpenPicture_Click(object sender, EventArgs e)
         {
@@ -173,6 +174,7 @@ namespace QLNH
             ofd.Filter = "JPG|*.JPG|PNG|*.PNG|Tất cả|*.*";
             if (ofd.ShowDialog() == DialogResult.OK)
             {
+                hasNewImage = true;
                 foodImagePath = ofd.FileName;
                 try
                 {
@@ -208,9 +210,6 @@ namespace QLNH
             }
         }
 
-
-        private bool hasNewImage = false; // Flag to track if a new image is selected
-
         private void btnUpdateFood_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(txbFoodID.Text);
@@ -218,6 +217,9 @@ namespace QLNH
             float price = (float)nmFoodPrice.Value;
             int categoryID = (cbCategory.SelectedItem as Category).ID;
             string imageName = "";
+            string imageName1 = "";
+            imageName1 = Path.GetFileName(foodImagePath);
+
 
             if (hasNewImage)
             {
@@ -228,7 +230,7 @@ namespace QLNH
                 imageName = (string)dtgvFood.SelectedCells[0].OwningRow.Cells["FoodImg"].Value;
             }
 
-            if (FoodDAO.Instance.UpdateFood(id, name, price, categoryID, "'" + imageName + "'"))
+            if (FoodDAO.Instance.UpdateFood(id, name, price, categoryID,  imageName ))
             {
                 hasNewImage = false;
                 LoadListFood();

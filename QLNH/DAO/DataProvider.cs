@@ -21,7 +21,7 @@ namespace QLNH.DAO
 
         private DataProvider() { }
 
-        private string connectionSTR = "Data Source=Yen\\SQLEXPRESS;Initial Catalog=RESTAURANT;Integrated Security=True";
+        private string connectionSTR = "Data Source=LAPTOP-IGU4RUNK\\SQLEXPRESS;Initial Catalog=RESTAURANT;Integrated Security=True";
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
             DataTable data = new DataTable();
