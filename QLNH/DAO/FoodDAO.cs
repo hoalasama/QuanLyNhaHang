@@ -91,17 +91,18 @@ namespace QLNH.DAO
 
         public bool UpdateFood(int idFood, string name, float price, int idcate, string imageName)
         {
-            string query; 
+            string query;
 
-            if (!string.IsNullOrEmpty(imageName))
+            if (imageName == "")
             {
-                int lastBackSlashIndex = imageName.LastIndexOf('\\');
-                string fileName = imageName.Substring(lastBackSlashIndex + 1);
-                query = string.Format("UPDATE MENU SET menu_name = N'{0}', menu_price = {1}, cate_id = {2}, menu_img = N'{3}' WHERE menu_id = {4}", name, price, idcate, fileName, idFood);
+                query = string.Format("UPDATE MENU SET menu_name = N'{0}', menu_price = {1}, cate_id = {2} WHERE menu_id = {4}", name, price, idcate, idFood);
             }
             else
             {
-                query = string.Format("UPDATE MENU SET menu_name = N'{0}', menu_price = {1}, cate_id = {2} WHERE menu_id = {4}", name, price, idcate, idFood);
+                imageName = imageName.Replace("''", "''"); 
+                int lastBackSlashIndex = imageName.LastIndexOf('\\'); 
+                string fileName = imageName.Substring(lastBackSlashIndex + 1);
+                query = string.Format("UPDATE MENU SET menu_name = N'{0}', menu_price = {1}, cate_id = {2}, menu_img = N'{3}' WHERE menu_id = {4}", name, price, idcate, imageName, idFood);
             }
 
             int result = DataProvider.Instance.ExecuteNonQuery(query);

@@ -209,24 +209,29 @@ namespace QLNH
         }
 
 
+        private bool hasNewImage = false; // Flag to track if a new image is selected
+
         private void btnUpdateFood_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(txbFoodID.Text);
             string name = txbFoodName.Text;
             float price = (float)nmFoodPrice.Value;
             int categoryID = (cbCategory.SelectedItem as Category).ID;
-            string imageName = Path.GetFileName(foodImagePath); 
+            string imageName = "";
 
-            if (string.IsNullOrEmpty(foodImagePath))
+            if (hasNewImage)
+            {
+                imageName = Path.GetFileName(foodImagePath);
+            }
+            else
             {
                 imageName = (string)dtgvFood.SelectedCells[0].OwningRow.Cells["FoodImg"].Value;
             }
 
             if (FoodDAO.Instance.UpdateFood(id, name, price, categoryID, "'" + imageName + "'"))
             {
-                MessageBox.Show("Chỉnh sửa thông tin thành công");
+                hasNewImage = false;
                 LoadListFood();
-
                 if (updateFood != null)
                 {
                     updateFood(this, new EventArgs());

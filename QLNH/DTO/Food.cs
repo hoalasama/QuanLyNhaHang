@@ -44,7 +44,7 @@ namespace QLNH.DAO
 
         private float price;
         public float Price
-        {
+        { 
             get { return price; }
             set { price = value; }
         }
