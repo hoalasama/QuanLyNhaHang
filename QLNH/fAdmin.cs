@@ -192,12 +192,12 @@ namespace QLNH
             string name = txbFoodName.Text;
             float price = (float)nmFoodPrice.Value;
             int categoryID = (cbCategory.SelectedItem as Category).ID;
-            string foodImagePath1 = pbFoodImage.ImageLocation;
             string foodImage;
 
             if (hasNewImage)
             {
                 foodImage = Path.GetFileName(foodImagePath);
+                hasNewImage = false;
             }
             else
             {
