@@ -192,7 +192,17 @@ namespace QLNH
             string name = txbFoodName.Text;
             float price = (float)nmFoodPrice.Value;
             int categoryID = (cbCategory.SelectedItem as Category).ID;
-            string foodImagePath = pbFoodImage.ImageLocation;
+            string foodImagePath1 = pbFoodImage.ImageLocation;
+            string foodImage;
+
+            if (hasNewImage)
+            {
+                foodImage = Path.GetFileName(foodImagePath);
+            }
+            else
+            {
+                foodImage = (string)dtgvFood.SelectedCells[0].OwningRow.Cells["FoodImg"].Value;
+            }
 
             if (FoodDAO.Instance.IsFoodNameExists(name))
             {
@@ -200,7 +210,7 @@ namespace QLNH
                 return;
             }
 
-            if (FoodDAO.Instance.InsertFood(name, price, categoryID, foodImagePath))
+            if (FoodDAO.Instance.InsertFood(name, price, categoryID, foodImage))
             {
                 MessageBox.Show("Thêm thành công");
                 LoadListFood();
