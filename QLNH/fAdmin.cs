@@ -192,6 +192,7 @@ namespace QLNH
             string name = txbFoodName.Text;
             float price = (float)nmFoodPrice.Value;
             int categoryID = (cbCategory.SelectedItem as Category).ID;
+            string foodImagePath = pbFoodImage.ImageLocation;
 
             if (FoodDAO.Instance.IsFoodNameExists(name))
             {
@@ -238,6 +239,7 @@ namespace QLNH
                 {
                     updateFood(this, new EventArgs());
                 }
+                MessageBox.Show("Sửa thành công");
             }
             else
             {
