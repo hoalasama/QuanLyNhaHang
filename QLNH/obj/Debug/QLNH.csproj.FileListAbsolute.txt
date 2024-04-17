@@ -24,3 +24,16 @@ D:\New folder\QuanLyNhaHang\QLNH\obj\Debug\QLNH.csproj.GenerateResource.cache
 D:\New folder\QuanLyNhaHang\QLNH\obj\Debug\QLNH.csproj.CoreCompileInputs.cache
 D:\New folder\QuanLyNhaHang\QLNH\obj\Debug\QLNH.exe
 D:\New folder\QuanLyNhaHang\QLNH\obj\Debug\QLNH.pdb
+D:\Labnhóm\QuanLyNhaHang\QLNH\bin\Debug\QLNH.exe.config
+D:\Labnhóm\QuanLyNhaHang\QLNH\bin\Debug\QLNH.exe
+D:\Labnhóm\QuanLyNhaHang\QLNH\bin\Debug\QLNH.pdb
+D:\Labnhóm\QuanLyNhaHang\QLNH\obj\Debug\QLNH.csproj.AssemblyReference.cache
+D:\Labnhóm\QuanLyNhaHang\QLNH\obj\Debug\QLNH.fAccountProfile.resources
+D:\Labnhóm\QuanLyNhaHang\QLNH\obj\Debug\QLNH.fAdmin.resources
+D:\Labnhóm\QuanLyNhaHang\QLNH\obj\Debug\QLNH.fLogin.resources
+D:\Labnhóm\QuanLyNhaHang\QLNH\obj\Debug\QLNH.fTableManager.resources
+D:\Labnhóm\QuanLyNhaHang\QLNH\obj\Debug\QLNH.Properties.Resources.resources
+D:\Labnhóm\QuanLyNhaHang\QLNH\obj\Debug\QLNH.csproj.GenerateResource.cache
+D:\Labnhóm\QuanLyNhaHang\QLNH\obj\Debug\QLNH.csproj.CoreCompileInputs.cache
+D:\Labnhóm\QuanLyNhaHang\QLNH\obj\Debug\QLNH.exe
+D:\Labnhóm\QuanLyNhaHang\QLNH\obj\Debug\QLNH.pdb

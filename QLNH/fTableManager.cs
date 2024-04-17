@@ -34,7 +34,7 @@ namespace QLNH
 
         void ChangeAccount(int role)
         {
-            //adminToolStripMenuItem.Enabled = role == 1;
+            adminToolStripMenuItem.Visible = role == 1;
             thôngTinTàiKhoảnToolStripMenuItem.Text += " (" + LoginAccount.DisplayName + ")";
         }
         

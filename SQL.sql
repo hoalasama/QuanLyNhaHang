@@ -9,7 +9,7 @@ CREATE TABLE CATEGORY(
 CREATE TABLE MENU(
 	menu_id INT IDENTITY primary key,
 	menu_name NVARCHAR(100) NOT NULL,
-	/*menu_img VARCHAR(100) NOT NULL,*/
+	menu_img VARCHAR(100) NOT NULL,
 	menu_price float DEFAULT(0) NOT NULL,
 	cate_id INT references CATEGORY(cate_id)
 );
@@ -78,11 +78,6 @@ INSERT INTO CATEGORY (cate_name) VALUES (N'Cơm và bún');
 INSERT INTO CATEGORY (cate_name) VALUES (N'Tráng miệng');
 INSERT INTO CATEGORY (cate_name) VALUES (N'Đồ uống');
 
-INSERT INTO MENU (menu_name, menu_price, cate_id)
-VALUES (N'Gỏi Cuốn', '50000', 1);
-
-INSERT INTO MENU (menu_name, menu_price, cate_id)
-VALUES (N'Phở Bò', '80000', 2);
 
 INSERT INTO MENU (menu_name, menu_img, menu_price, cate_id)
 VALUES (N'Bún Tôm', 'bun-tom.jpg', '70000', 3);
@@ -152,6 +147,8 @@ VALUES ('anh2000', '456', N'Vân Anh', N'Nguyễn Vân Anh', '0901234567'),
        ('cang2002', '135', N'Cang', N'Lê Minh Cang', '0856789012'),
        ('dung1991', '246', N'Dung', N'Phạm Thu Dung', '0945678901'),
        ('em1992', '789', N'Ngọc Em', N'Hồ Ngọc Em', '0321903456')
+
+UPDATE USERS SET user_role = 1 WHERE user_id =1;
 
 CREATE PROC USP_GetAccountByUserName
 @userName NVARCHAR(50)

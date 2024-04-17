@@ -19,7 +19,7 @@ namespace QLNH
     {
         BindingSource foodList = new BindingSource();
         BindingSource categoryList = new BindingSource();
-        BindingSource tableList = new BindingSource();  
+        BindingSource tableList = new BindingSource();
 
         public fAdmin()
         {
@@ -70,7 +70,7 @@ namespace QLNH
             pbFoodImage.DataBindings.Add(new Binding("ImageLocation", dtgvFood.DataSource, "FoodImg", true, DataSourceUpdateMode.Never));
         }
 
-        void AddCategoryBinding() 
+        void AddCategoryBinding()
         {
             txbCategoryName.DataBindings.Add(new Binding("Text", dtgvCategory.DataSource, "CateName", true, DataSourceUpdateMode.Never));
             txbCategoryID.DataBindings.Add(new Binding("Text", dtgvCategory.DataSource, "ID", true, DataSourceUpdateMode.Never));
@@ -98,15 +98,15 @@ namespace QLNH
 
         void LoadListBillByDate(DateTime checkIn, DateTime checkOut)
         {
-            dtgvBill.DataSource = BillDAO.Instance.GetBillListByDate(checkIn, checkOut);    
+            dtgvBill.DataSource = BillDAO.Instance.GetBillListByDate(checkIn, checkOut);
         }
 
         void LoadListFood()
         {
-            string basePath = @"D:\Labnhóm\DotNet\code\img\";
+            string basePath = @"D:\Labnhóm\QuanLyNhaHang\img";
             foodList.DataSource = FoodDAO.Instance.GetListFood().Select(f =>
             {
-                f.FoodImg = Path.Combine(basePath, f.FoodImg); 
+                f.FoodImg = Path.Combine(basePath, f.FoodImg);
                 return f;
             });
         }
@@ -161,10 +161,11 @@ namespace QLNH
                 }
                 cbCategory.SelectedIndex = index;
             }
-            
+
         }
 
         private string foodImagePath;
+        private bool hasNewImage = false;
 
         private void btnOpenPicture_Click(object sender, EventArgs e)
         {
@@ -173,6 +174,7 @@ namespace QLNH
             ofd.Filter = "JPG|*.JPG|PNG|*.PNG|Tất cả|*.*";
             if (ofd.ShowDialog() == DialogResult.OK)
             {
+                hasNewImage = true;
                 foodImagePath = ofd.FileName;
                 try
                 {
@@ -190,6 +192,18 @@ namespace QLNH
             string name = txbFoodName.Text;
             float price = (float)nmFoodPrice.Value;
             int categoryID = (cbCategory.SelectedItem as Category).ID;
+            string foodImagePath1 = pbFoodImage.ImageLocation;
+            string foodImage;
+
+            if (hasNewImage)
+            {
+                foodImage = Path.GetFileName(foodImagePath);
+                hasNewImage = false;
+            }
+            else
+            {
+                foodImage = (string)dtgvFood.SelectedCells[0].OwningRow.Cells["FoodImg"].Value;
+            }
 
             if (FoodDAO.Instance.IsFoodNameExists(name))
             {
@@ -197,7 +211,7 @@ namespace QLNH
                 return;
             }
 
-            if (FoodDAO.Instance.InsertFood(name, price, categoryID, foodImagePath))
+            if (FoodDAO.Instance.InsertFood(name, price, categoryID, foodImage))
             {
                 MessageBox.Show("Thêm thành công");
                 LoadListFood();
@@ -208,9 +222,6 @@ namespace QLNH
             }
         }
 
-
-        private bool hasNewImage = false; // Flag to track if a new image is selected
-
         private void btnUpdateFood_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(txbFoodID.Text);
@@ -218,6 +229,9 @@ namespace QLNH
             float price = (float)nmFoodPrice.Value;
             int categoryID = (cbCategory.SelectedItem as Category).ID;
             string imageName = "";
+            string imageName1 = "";
+            imageName1 = Path.GetFileName(foodImagePath);
+
 
             if (hasNewImage)
             {
@@ -228,7 +242,7 @@ namespace QLNH
                 imageName = (string)dtgvFood.SelectedCells[0].OwningRow.Cells["FoodImg"].Value;
             }
 
-            if (FoodDAO.Instance.UpdateFood(id, name, price, categoryID, "'" + imageName + "'"))
+            if (FoodDAO.Instance.UpdateFood(id, name, price, categoryID, imageName))
             {
                 hasNewImage = false;
                 LoadListFood();
@@ -236,6 +250,7 @@ namespace QLNH
                 {
                     updateFood(this, new EventArgs());
                 }
+                MessageBox.Show("Sửa thành công");
             }
             else
             {
@@ -264,7 +279,7 @@ namespace QLNH
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            string basePath = @"D:\Labnhóm\DotNet\code\img\";
+            string basePath = @"D:\Labnhóm\QuanLyNhaHang\img";
             foodList.DataSource = SearchFoodByName(txbSearchFoodName.Text).Select(f =>
             {
                 f.FoodImg = Path.Combine(basePath, f.FoodImg);
@@ -413,7 +428,7 @@ namespace QLNH
 
         public event EventHandler InsertFood
         {
-            add { insertFood += value; } 
+            add { insertFood += value; }
             remove { insertFood -= value; }
         }
 
@@ -481,6 +496,6 @@ namespace QLNH
             remove { updateTable -= value; }
         }
 
-        
+
     }
 }

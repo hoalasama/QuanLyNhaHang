@@ -24,7 +24,7 @@ namespace QLNH.DAO
 
         private FoodDAO() { }
 
-        public List<Food>GetFoodByCategoryID(int id)
+        public List<Food> GetFoodByCategoryID(int id)
         {
             List<Food> listFood = new List<Food>();
 
@@ -99,8 +99,8 @@ namespace QLNH.DAO
             }
             else
             {
-                imageName = imageName.Replace("''", "''"); 
-                int lastBackSlashIndex = imageName.LastIndexOf('\\'); 
+                imageName = imageName.Replace("''", "''");
+                int lastBackSlashIndex = imageName.LastIndexOf('\\');
                 string fileName = imageName.Substring(lastBackSlashIndex + 1);
                 query = string.Format("UPDATE MENU SET menu_name = N'{0}', menu_price = {1}, cate_id = {2}, menu_img = N'{3}' WHERE menu_id = {4}", name, price, idcate, imageName, idFood);
             }
@@ -114,7 +114,7 @@ namespace QLNH.DAO
         {
             BillInfoDAO.Instance.DeleteBillInfoByFoodID(idFood);
 
-            string query = string.Format("DELETE MENU WHERE menu_id = {0}" ,idFood);
+            string query = string.Format("DELETE MENU WHERE menu_id = {0}", idFood);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
