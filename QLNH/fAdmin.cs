@@ -12,6 +12,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace QLNH
 {
@@ -20,6 +21,7 @@ namespace QLNH
         BindingSource foodList = new BindingSource();
         BindingSource categoryList = new BindingSource();
         BindingSource tableList = new BindingSource();
+        BindingSource accountList = new BindingSource();
 
         public fAdmin()
         {
@@ -29,6 +31,7 @@ namespace QLNH
             txbCategoryID.Enabled = false;
             txbTableID.Enabled = false;
             txbTableStatus.Enabled = false;
+            txbAccountID.Enabled = false;
         }
 
         List<Food> SearchFoodByName(string name)
@@ -42,24 +45,18 @@ namespace QLNH
             dtgvFood.DataSource = foodList;
             dtgvCategory.DataSource = categoryList;
             dtgvTable.DataSource = tableList;
+            dtgvAccount.DataSource = accountList;
             LoadDateTimePickerBill();
             LoadListBillByDate(dtpkFromDate.Value, dtpkToDate.Value);
             LoadListFood();
             LoadListCategory();
             LoadListTable();
-            LoadAccountList();
+            LoadListAccount();
             AddFoodBinding();
             AddCategoryBinding();
             AddTableBinding();
+            AddAccountBinding();
             LoadCategoryToCombobox(cbCategory);
-        }
-
-        void LoadAccountList()
-        {
-            string query = "SELECT * FROM USERS";
-
-            dtgvAccount.DataSource = DataProvider.Instance.ExecuteQuery(query);
-
         }
 
         void AddFoodBinding()
@@ -81,6 +78,17 @@ namespace QLNH
             txbTableName.DataBindings.Add(new Binding("Text", dtgvTable.DataSource, "Name", true, DataSourceUpdateMode.Never));
             txbTableID.DataBindings.Add(new Binding("Text", dtgvTable.DataSource, "ID", true, DataSourceUpdateMode.Never));
             txbTableStatus.DataBindings.Add(new Binding("Text", dtgvTable.DataSource, "Status", true, DataSourceUpdateMode.Never));
+        }
+
+        void AddAccountBinding()
+        {
+            txbUserName.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "UserName", true, DataSourceUpdateMode.Never));
+            txbAccountID.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "ID", true, DataSourceUpdateMode.Never));
+            txbDisplayName.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "DisplayName", true, DataSourceUpdateMode.Never));
+            txbFullName.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "FullName", true, DataSourceUpdateMode.Never));
+            txbPhone.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "Phone", true, DataSourceUpdateMode.Never));
+            txbPassword.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "PassWord", true, DataSourceUpdateMode.Never));
+            txbRole.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "Role", true, DataSourceUpdateMode.Never));
         }
 
         void LoadCategoryToCombobox(ComboBox cb)
@@ -121,6 +129,11 @@ namespace QLNH
             tableList.DataSource = TableDAO.Instance.GetListTable();
         }
 
+        void LoadListAccount()
+        {
+            accountList.DataSource = AccountDAO.Instance.GetListAccount();
+        }
+
         private void btnViewBill_Click(object sender, EventArgs e)
         {
             LoadListBillByDate(dtpkFromDate.Value, dtpkToDate.Value);
@@ -139,6 +152,11 @@ namespace QLNH
         private void btnShowTable_Click(object sender, EventArgs e)
         {
             LoadListTable();
+        }
+
+        private void btnShowAccount_Click(object sender, EventArgs e)
+        {
+            LoadListAccount();
         }
 
         private void txbFoodID_TextChanged(object sender, EventArgs e)
@@ -231,7 +249,6 @@ namespace QLNH
             string imageName = "";
             string imageName1 = "";
             imageName1 = Path.GetFileName(foodImagePath);
-
 
             if (hasNewImage)
             {
@@ -334,7 +351,6 @@ namespace QLNH
             {
                 MessageBox.Show("Có lỗi khi chỉnh sửa");
             }
-
         }
 
         private void btnDeleteCategory_Click(object sender, EventArgs e)
@@ -424,6 +440,32 @@ namespace QLNH
             }
         }
 
+        private void btnAddAccount_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(txbAccountID.Text);
+            string userName = txbUserName.Text;
+            string passWord = txbPassword.Text;
+            string displayName = txbDisplayName.Text;
+            string fullName = txbFullName.Text;
+            string phone = txbPhone.Text;
+
+            /*if (AccountDAO.Instance.IsUserNameExists(userName))
+            {
+                MessageBox.Show("Tên tài khoản đã tồn tại. Vui lòng điền tên khác!", "Lỗi trùng tên", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }*/
+
+            if (AccountDAO.Instance.InsertAccount(userName, passWord, displayName, fullName, phone))
+            {
+                MessageBox.Show("Thêm thành công");
+                LoadListAccount();
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi khi thêm vào");
+            }
+        }
+
         private event EventHandler insertFood;
 
         public event EventHandler InsertFood
@@ -474,7 +516,7 @@ namespace QLNH
 
         private event EventHandler insertTable;
 
-        public event EventHandler InserTable
+        public event EventHandler InsertTable
         {
             add { insertTable += value; }
             remove { insertTable -= value; }
@@ -496,6 +538,28 @@ namespace QLNH
             remove { updateTable -= value; }
         }
 
+        private event EventHandler insertAccount;
 
+        public event EventHandler InsertAccount
+        {
+            add { insertAccount += value; }
+            remove { insertAccount -= value; }
+        }
+
+        private event EventHandler deleteAccount;
+
+        public event EventHandler DeleteAccount
+        {
+            add { deleteAccount += value; }
+            remove { deleteAccount -= value; }
+        }
+
+        private event EventHandler updateAccount;
+
+        public event EventHandler UpdateAccount
+        {
+            add { updateAccount += value; }
+            remove { updateAccount -= value; }
+        }
     }
 }

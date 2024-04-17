@@ -104,24 +104,29 @@
             this.btnEditAccount = new System.Windows.Forms.Button();
             this.btnAddAccount = new System.Windows.Forms.Button();
             this.panel15 = new System.Windows.Forms.Panel();
-            this.btnSetPassword = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txbPhone = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.panel16 = new System.Windows.Forms.Panel();
-            this.txbFullName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel17 = new System.Windows.Forms.Panel();
-            this.txbPassword = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel18 = new System.Windows.Forms.Panel();
-            this.txbUserName = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel19 = new System.Windows.Forms.Panel();
-            this.txbAccountID = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel20 = new System.Windows.Forms.Panel();
             this.dtgvAccount = new System.Windows.Forms.DataGridView();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.panel23 = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txbAccountID = new System.Windows.Forms.TextBox();
+            this.txbUserName = new System.Windows.Forms.TextBox();
+            this.txbDisplayName = new System.Windows.Forms.TextBox();
+            this.txbPassword = new System.Windows.Forms.TextBox();
+            this.txbFullName = new System.Windows.Forms.TextBox();
+            this.txbPhone = new System.Windows.Forms.TextBox();
+            this.txbRole = new System.Windows.Forms.TextBox();
             this.tcAdmin.SuspendLayout();
             this.tpBill.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -165,6 +170,8 @@
             this.panel19.SuspendLayout();
             this.panel20.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAccount)).BeginInit();
+            this.panel13.SuspendLayout();
+            this.panel23.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcAdmin
@@ -351,6 +358,7 @@
             // 
             // btnOpenPicture
             // 
+            this.btnOpenPicture.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOpenPicture.Location = new System.Drawing.Point(289, 384);
             this.btnOpenPicture.Name = "btnOpenPicture";
             this.btnOpenPicture.Size = new System.Drawing.Size(103, 37);
@@ -383,9 +391,9 @@
             this.label15.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(12, 13);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(76, 20);
+            this.label15.Size = new System.Drawing.Size(80, 20);
             this.label15.TabIndex = 0;
-            this.label15.Text = "Hình ảnh";
+            this.label15.Text = "Hình ảnh:";
             // 
             // panel12
             // 
@@ -411,12 +419,12 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(12, 6);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(32, 22);
+            this.label4.Size = new System.Drawing.Size(38, 20);
             this.label4.TabIndex = 0;
-            this.label4.Text = "Giá";
+            this.label4.Text = "Giá:";
             // 
             // panel11
             // 
@@ -438,12 +446,12 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(12, 6);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 22);
+            this.label3.Size = new System.Drawing.Size(88, 20);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Danh mục";
+            this.label3.Text = "Danh mục:";
             // 
             // panel10
             // 
@@ -464,12 +472,12 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(12, 6);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 22);
+            this.label2.Size = new System.Drawing.Size(79, 20);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Tên món";
+            this.label2.Text = "Tên món:";
             // 
             // panel9
             // 
@@ -491,12 +499,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(24, 22);
+            this.label1.Size = new System.Drawing.Size(37, 20);
             this.label1.TabIndex = 0;
-            this.label1.Text = "ID";
+            this.label1.Text = "ID: ";
             // 
             // panel5
             // 
@@ -556,12 +564,12 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(11, 13);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(105, 22);
+            this.label11.Size = new System.Drawing.Size(118, 20);
             this.label11.TabIndex = 0;
-            this.label11.Text = "Tên danh mục";
+            this.label11.Text = "Tên danh mục:";
             // 
             // panel28
             // 
@@ -582,12 +590,12 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(12, 14);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(24, 22);
+            this.label12.Size = new System.Drawing.Size(32, 20);
             this.label12.TabIndex = 0;
-            this.label12.Text = "ID";
+            this.label12.Text = "ID:";
             // 
             // panel22
             // 
@@ -700,12 +708,12 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(12, 6);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(76, 22);
+            this.label9.Size = new System.Drawing.Size(86, 20);
             this.label9.TabIndex = 0;
-            this.label9.Text = "Trạng thái";
+            this.label9.Text = "Trạng thái:";
             // 
             // panel33
             // 
@@ -726,12 +734,12 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(12, 6);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(63, 22);
+            this.label13.Size = new System.Drawing.Size(73, 20);
             this.label13.TabIndex = 0;
-            this.label13.Text = "Tên bàn";
+            this.label13.Text = "Tên bàn:";
             // 
             // panel34
             // 
@@ -752,12 +760,12 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(12, 6);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(24, 22);
+            this.label14.Size = new System.Drawing.Size(32, 20);
             this.label14.TabIndex = 0;
-            this.label14.Text = "ID";
+            this.label14.Text = "ID:";
             // 
             // panel29
             // 
@@ -789,7 +797,7 @@
             // 
             // btnShowTable
             // 
-            this.btnShowTable.Location = new System.Drawing.Point(305, 6);
+            this.btnShowTable.Location = new System.Drawing.Point(305, 3);
             this.btnShowTable.Name = "btnShowTable";
             this.btnShowTable.Size = new System.Drawing.Size(89, 27);
             this.btnShowTable.TabIndex = 3;
@@ -818,7 +826,7 @@
             // 
             // btnAddTable
             // 
-            this.btnAddTable.Location = new System.Drawing.Point(20, 6);
+            this.btnAddTable.Location = new System.Drawing.Point(20, 3);
             this.btnAddTable.Name = "btnAddTable";
             this.btnAddTable.Size = new System.Drawing.Size(89, 27);
             this.btnAddTable.TabIndex = 0;
@@ -858,10 +866,11 @@
             this.btnShowAccount.TabIndex = 3;
             this.btnShowAccount.Text = "Xem";
             this.btnShowAccount.UseVisualStyleBackColor = true;
+            this.btnShowAccount.Click += new System.EventHandler(this.btnShowAccount_Click);
             // 
             // btnDeleteAccount
             // 
-            this.btnDeleteAccount.Location = new System.Drawing.Point(238, 3);
+            this.btnDeleteAccount.Location = new System.Drawing.Point(227, 3);
             this.btnDeleteAccount.Name = "btnDeleteAccount";
             this.btnDeleteAccount.Size = new System.Drawing.Size(89, 27);
             this.btnDeleteAccount.TabIndex = 2;
@@ -870,7 +879,7 @@
             // 
             // btnEditAccount
             // 
-            this.btnEditAccount.Location = new System.Drawing.Point(129, 3);
+            this.btnEditAccount.Location = new System.Drawing.Point(121, 3);
             this.btnEditAccount.Name = "btnEditAccount";
             this.btnEditAccount.Size = new System.Drawing.Size(89, 27);
             this.btnEditAccount.TabIndex = 1;
@@ -879,16 +888,18 @@
             // 
             // btnAddAccount
             // 
-            this.btnAddAccount.Location = new System.Drawing.Point(3, 3);
+            this.btnAddAccount.Location = new System.Drawing.Point(12, 3);
             this.btnAddAccount.Name = "btnAddAccount";
             this.btnAddAccount.Size = new System.Drawing.Size(89, 27);
             this.btnAddAccount.TabIndex = 0;
             this.btnAddAccount.Text = "Thêm";
             this.btnAddAccount.UseVisualStyleBackColor = true;
+            this.btnAddAccount.Click += new System.EventHandler(this.btnAddAccount_Click);
             // 
             // panel15
             // 
-            this.panel15.Controls.Add(this.btnSetPassword);
+            this.panel15.Controls.Add(this.panel23);
+            this.panel15.Controls.Add(this.panel13);
             this.panel15.Controls.Add(this.panel1);
             this.panel15.Controls.Add(this.panel16);
             this.panel15.Controls.Add(this.panel17);
@@ -899,122 +910,81 @@
             this.panel15.Size = new System.Drawing.Size(398, 420);
             this.panel15.TabIndex = 1;
             // 
-            // btnSetPassword
-            // 
-            this.btnSetPassword.Location = new System.Drawing.Point(260, 250);
-            this.btnSetPassword.Name = "btnSetPassword";
-            this.btnSetPassword.Size = new System.Drawing.Size(115, 66);
-            this.btnSetPassword.TabIndex = 7;
-            this.btnSetPassword.Text = "Đặt lại mật khẩu";
-            this.btnSetPassword.UseVisualStyleBackColor = true;
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.txbPhone);
             this.panel1.Controls.Add(this.label10);
-            this.panel1.Location = new System.Drawing.Point(6, 183);
+            this.panel1.Location = new System.Drawing.Point(6, 298);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(372, 39);
             this.panel1.TabIndex = 6;
             // 
-            // txbPhone
-            // 
-            this.txbPhone.Location = new System.Drawing.Point(127, 6);
-            this.txbPhone.Name = "txbPhone";
-            this.txbPhone.ReadOnly = true;
-            this.txbPhone.Size = new System.Drawing.Size(231, 22);
-            this.txbPhone.TabIndex = 2;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(12, 6);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(99, 22);
+            this.label10.Size = new System.Drawing.Size(107, 20);
             this.label10.TabIndex = 0;
-            this.label10.Text = "Số điện thoại";
+            this.label10.Text = "Số điện thoại:";
             // 
             // panel16
             // 
             this.panel16.Controls.Add(this.txbFullName);
             this.panel16.Controls.Add(this.label5);
-            this.panel16.Location = new System.Drawing.Point(6, 138);
+            this.panel16.Location = new System.Drawing.Point(6, 243);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(372, 39);
             this.panel16.TabIndex = 5;
             // 
-            // txbFullName
-            // 
-            this.txbFullName.Location = new System.Drawing.Point(127, 6);
-            this.txbFullName.Name = "txbFullName";
-            this.txbFullName.ReadOnly = true;
-            this.txbFullName.Size = new System.Drawing.Size(231, 22);
-            this.txbFullName.TabIndex = 2;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(12, 6);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(101, 22);
+            this.label5.Size = new System.Drawing.Size(117, 20);
             this.label5.TabIndex = 0;
-            this.label5.Text = "Tên nhân viên";
+            this.label5.Text = "Tên nhân viên:";
             // 
             // panel17
             // 
             this.panel17.Controls.Add(this.txbPassword);
             this.panel17.Controls.Add(this.label6);
-            this.panel17.Location = new System.Drawing.Point(6, 93);
+            this.panel17.Location = new System.Drawing.Point(6, 185);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(372, 39);
             this.panel17.TabIndex = 4;
             // 
-            // txbPassword
-            // 
-            this.txbPassword.Location = new System.Drawing.Point(127, 8);
-            this.txbPassword.Name = "txbPassword";
-            this.txbPassword.ReadOnly = true;
-            this.txbPassword.Size = new System.Drawing.Size(239, 22);
-            this.txbPassword.TabIndex = 2;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(12, 6);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 22);
+            this.label6.Size = new System.Drawing.Size(82, 20);
             this.label6.TabIndex = 0;
-            this.label6.Text = "Mật khẩu";
+            this.label6.Text = "Mật khẩu:";
             // 
             // panel18
             // 
             this.panel18.Controls.Add(this.txbUserName);
             this.panel18.Controls.Add(this.label7);
-            this.panel18.Location = new System.Drawing.Point(6, 48);
+            this.panel18.Location = new System.Drawing.Point(6, 60);
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(372, 39);
             this.panel18.TabIndex = 3;
             // 
-            // txbUserName
-            // 
-            this.txbUserName.Location = new System.Drawing.Point(127, 6);
-            this.txbUserName.Name = "txbUserName";
-            this.txbUserName.ReadOnly = true;
-            this.txbUserName.Size = new System.Drawing.Size(239, 22);
-            this.txbUserName.TabIndex = 1;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(12, 6);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(109, 22);
+            this.label7.Size = new System.Drawing.Size(121, 20);
             this.label7.TabIndex = 0;
-            this.label7.Text = "Tên đăng nhập";
+            this.label7.Text = "Tên đăng nhập:";
             // 
             // panel19
             // 
@@ -1025,23 +995,15 @@
             this.panel19.Size = new System.Drawing.Size(372, 39);
             this.panel19.TabIndex = 2;
             // 
-            // txbAccountID
-            // 
-            this.txbAccountID.Location = new System.Drawing.Point(127, 6);
-            this.txbAccountID.Name = "txbAccountID";
-            this.txbAccountID.ReadOnly = true;
-            this.txbAccountID.Size = new System.Drawing.Size(242, 22);
-            this.txbAccountID.TabIndex = 1;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(12, 6);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(24, 22);
+            this.label8.Size = new System.Drawing.Size(32, 20);
             this.label8.TabIndex = 0;
-            this.label8.Text = "ID";
+            this.label8.Text = "ID:";
             // 
             // panel20
             // 
@@ -1059,6 +1021,93 @@
             this.dtgvAccount.RowHeadersWidth = 51;
             this.dtgvAccount.Size = new System.Drawing.Size(449, 420);
             this.dtgvAccount.TabIndex = 0;
+            // 
+            // panel13
+            // 
+            this.panel13.Controls.Add(this.txbDisplayName);
+            this.panel13.Controls.Add(this.label16);
+            this.panel13.Location = new System.Drawing.Point(6, 122);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(372, 39);
+            this.panel13.TabIndex = 7;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(12, 6);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(100, 20);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "Tên hiển thị:";
+            // 
+            // panel23
+            // 
+            this.panel23.Controls.Add(this.txbRole);
+            this.panel23.Controls.Add(this.label17);
+            this.panel23.Location = new System.Drawing.Point(6, 355);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(372, 39);
+            this.panel23.TabIndex = 8;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(12, 6);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(75, 20);
+            this.label17.TabIndex = 0;
+            this.label17.Text = "Chức vụ:";
+            // 
+            // txbAccountID
+            // 
+            this.txbAccountID.Location = new System.Drawing.Point(141, 6);
+            this.txbAccountID.Name = "txbAccountID";
+            this.txbAccountID.Size = new System.Drawing.Size(218, 22);
+            this.txbAccountID.TabIndex = 6;
+            // 
+            // txbUserName
+            // 
+            this.txbUserName.Location = new System.Drawing.Point(141, 6);
+            this.txbUserName.Name = "txbUserName";
+            this.txbUserName.Size = new System.Drawing.Size(218, 22);
+            this.txbUserName.TabIndex = 7;
+            // 
+            // txbDisplayName
+            // 
+            this.txbDisplayName.Location = new System.Drawing.Point(141, 6);
+            this.txbDisplayName.Name = "txbDisplayName";
+            this.txbDisplayName.Size = new System.Drawing.Size(218, 22);
+            this.txbDisplayName.TabIndex = 7;
+            // 
+            // txbPassword
+            // 
+            this.txbPassword.Location = new System.Drawing.Point(141, 6);
+            this.txbPassword.Name = "txbPassword";
+            this.txbPassword.Size = new System.Drawing.Size(218, 22);
+            this.txbPassword.TabIndex = 8;
+            // 
+            // txbFullName
+            // 
+            this.txbFullName.Location = new System.Drawing.Point(141, 6);
+            this.txbFullName.Name = "txbFullName";
+            this.txbFullName.Size = new System.Drawing.Size(218, 22);
+            this.txbFullName.TabIndex = 7;
+            // 
+            // txbPhone
+            // 
+            this.txbPhone.Location = new System.Drawing.Point(141, 6);
+            this.txbPhone.Name = "txbPhone";
+            this.txbPhone.Size = new System.Drawing.Size(218, 22);
+            this.txbPhone.TabIndex = 7;
+            // 
+            // txbRole
+            // 
+            this.txbRole.Location = new System.Drawing.Point(141, 6);
+            this.txbRole.Name = "txbRole";
+            this.txbRole.Size = new System.Drawing.Size(218, 22);
+            this.txbRole.TabIndex = 7;
             // 
             // fAdmin
             // 
@@ -1127,6 +1176,10 @@
             this.panel19.PerformLayout();
             this.panel20.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAccount)).EndInit();
+            this.panel13.ResumeLayout(false);
+            this.panel13.PerformLayout();
+            this.panel23.ResumeLayout(false);
+            this.panel23.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1177,10 +1230,8 @@
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel18;
-        private System.Windows.Forms.TextBox txbUserName;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel19;
-        private System.Windows.Forms.TextBox txbAccountID;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel20;
         private System.Windows.Forms.DataGridView dtgvAccount;
@@ -1208,11 +1259,7 @@
         private System.Windows.Forms.Button btnEditTable;
         private System.Windows.Forms.Button btnAddTable;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txbPhone;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txbFullName;
-        private System.Windows.Forms.TextBox txbPassword;
-        private System.Windows.Forms.Button btnSetPassword;
         private System.Windows.Forms.DataGridView dtgvCategory;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label15;
@@ -1227,5 +1274,16 @@
         private System.Windows.Forms.TextBox txbTableName;
         private System.Windows.Forms.Button btnOpenPicture;
         private System.Windows.Forms.TextBox txbTableStatus;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Panel panel23;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox txbRole;
+        private System.Windows.Forms.TextBox txbDisplayName;
+        private System.Windows.Forms.TextBox txbPhone;
+        private System.Windows.Forms.TextBox txbFullName;
+        private System.Windows.Forms.TextBox txbPassword;
+        private System.Windows.Forms.TextBox txbUserName;
+        private System.Windows.Forms.TextBox txbAccountID;
     }
 }

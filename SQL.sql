@@ -68,70 +68,93 @@ SELECT *FROM MENU;
 SELECT *FROM CATEGORY;
 
 INSERT INTO CATEGORY (cate_name) VALUES (N'Món khai vị');
-INSERT INTO CATEGORY (cate_name) VALUES (N'Soup');
-INSERT INTO CATEGORY (cate_name) VALUES (N'Món chính');
-INSERT INTO CATEGORY (cate_name) VALUES (N'Rau xanh');
-INSERT INTO CATEGORY (cate_name) VALUES (N'Nấm');
-INSERT INTO CATEGORY (cate_name) VALUES (N'Hải sản');
-INSERT INTO CATEGORY (cate_name) VALUES (N'Thịt gia súc');
-INSERT INTO CATEGORY (cate_name) VALUES (N'Cơm và bún');
+INSERT INTO CATEGORY (cate_name) VALUES (N'Món gỏi');
+INSERT INTO CATEGORY (cate_name) VALUES (N'Món cuốn');
+INSERT INTO CATEGORY (cate_name) VALUES (N'Món canh');
+INSERT INTO CATEGORY (cate_name) VALUES (N'Gà');
+INSERT INTO CATEGORY (cate_name) VALUES (N'Bò');
+INSERT INTO CATEGORY (cate_name) VALUES (N'Rau');
+INSERT INTO CATEGORY (cate_name) VALUES (N'Món cơm');
 INSERT INTO CATEGORY (cate_name) VALUES (N'Tráng miệng');
 INSERT INTO CATEGORY (cate_name) VALUES (N'Đồ uống');
 
+INSERT INTO MENU (menu_name, menu_img, menu_price, cate_id)
+VALUES (N'Ngô chiên', 'ngochien.jpg', 40000, 1);
 
 INSERT INTO MENU (menu_name, menu_img, menu_price, cate_id)
-VALUES (N'Bún Tôm', 'bun-tom.jpg', '70000', 3);
+VALUES (N'Cánh gà sốt me', 'canhgasotme.jpg', 48000, 1);
 
 INSERT INTO MENU (menu_name, menu_img, menu_price, cate_id)
-VALUES (N'Rau Cải Xào Tỏi', 'rau-cai-xao-toi.jpg', '30000', 4);
+VALUES (N'Bò nướng lá lót', 'bonuonglalot.jpg', 45000, 1);
 
 INSERT INTO MENU (menu_name, menu_img, menu_price, cate_id)
-VALUES (N'Nấm Kim Châm Trứng', 'nam-kim-cham-trung.jpg', '40000', 5);
-
-INSERT INTO MENU (menu_name, menu_price, cate_id)
-VALUES (N'Tôm Hùm Nướng', 'tom-hum-nuong.jpg', '250000', 6);
+VALUES (N'Cánh gà chiên xóc tỏi ớt', 'canhgachienxoctoiot.jpg', 45000, 1);
 
 INSERT INTO MENU (menu_name, menu_img, menu_price, cate_id)
-VALUES (N'Bò Lụi', 'bo-lui.jpg', '600000', 7);
+VALUES (N'Chạo tôm bó mía', 'chaotombomia.jpg', 65000, 1);
 
 INSERT INTO MENU (menu_name, menu_img, menu_price, cate_id)
-VALUES (N'Cơm Tấm', 'com-tam.jpg', '300000', 8);
+VALUES (N'Gỏi miến hải sản', 'goimienhaisan.png', 75000, 2);
 
 INSERT INTO MENU (menu_name, menu_img, menu_price, cate_id)
-VALUES (N'Chè', 'che.jpg', '250000', 9);
+VALUES (N'Gỏi rau càng cua, bò sa tế áp chảo', 'goiraucangcua.jpg', 75000, 2);
 
 INSERT INTO MENU (menu_name, menu_img, menu_price, cate_id)
-VALUES (N'Trà Đá', 'tra-da.jpg', '150000', 10);
+VALUES (N'Gỏi bò cà pháo', 'goibocaphao.jpg', 64000, 2);
 
 INSERT INTO MENU (menu_name, menu_img, menu_price, cate_id)
-VALUES (N'Nem Rán', 'nem-ran.jpg', '40000', 1);
+VALUES (N'Gỏi cuốn tôm thịt', 'goicuontomthit.jpg', 48000, 3);
 
 INSERT INTO MENU (menu_name, menu_img, menu_price, cate_id)
-VALUES (N'Bánh Xèo', 'banh-xeo.jpg', '50000', 1);
+VALUES (N'Chả giò', 'chagio.jpg', 48000, 3);
 
 INSERT INTO MENU (menu_name, menu_img, menu_price, cate_id)
-VALUES (N'Há Cảo', 'ha-cao.jpg', '35000', 1);
+VALUES (N'Chả giò hải sản', 'chagiohaisan.jpg', 58000, 3);
 
 INSERT INTO MENU (menu_name, menu_img, menu_price, cate_id)
-VALUES (N'Kim Chi', 'kim-chi.jpg', '20000', 1);
+VALUES (N'Chả giò hải sản', 'chagiohaisan.jpg', 58000, 3);
 
 INSERT INTO MENU (menu_name, menu_img, menu_price, cate_id)
-VALUES (N'Súp Bí Đỏ', 'sup-bi-do.jpg', '30000', 2); 
+VALUES (N'Súp bắp tôm', 'supbaptom.jpg', 48000, 4);
 
 INSERT INTO MENU (menu_name, menu_img, menu_price, cate_id)
-VALUES (N'Cá Kho Tộ', 'ca-kho-to.jpg', '100000', 3);
+VALUES (N'Canh tôm bầu', 'canhtombau.jpg', 48000, 4);
 
 INSERT INTO MENU (menu_name, menu_img, menu_price, cate_id)
-VALUES (N'Gà Rán Mật Ong', 'ga-ran-mat-ong.jpg', '80000', 3);
+VALUES (N'Gà hấp mắm nhỉ, kèm sôi', 'gahap.jpg', 48000, 5);
 
 INSERT INTO MENU (menu_name, menu_img, menu_price, cate_id)
-VALUES (N'Mì Quảng', 'mi-quang.jpg', '60000', 3);
+VALUES (N'Bò phi lê nướng sả', 'bophile.png', 94000, 6);
 
 INSERT INTO MENU (menu_name, menu_img, menu_price, cate_id)
-VALUES (N'Lẩu Cá Hồi', 'lau-ca-hoi.jpg', '200000', 3);
+VALUES (N'Rau muống xào tỏi', 'raumuongxaotoi.jpg', 38000, 7);
 
 INSERT INTO MENU (menu_name, menu_img, menu_price, cate_id)
-VALUES (N'Bún Chả', 'bun-cha.jpg', '70000', 3);
+VALUES (N'Cải thìa xào tỏi dầu hào', 'caithia.jpg', 38000, 7);
+
+INSERT INTO MENU (menu_name, menu_img, menu_price, cate_id)
+VALUES (N'Canh nắm bông cải đậu hủ', 'canhnam.jpg', 48000, 8);
+
+INSERT INTO MENU (menu_name, menu_img, menu_price, cate_id)
+VALUES (N'Cơm trắng', 'comtrang.jpg', 7000, 8);
+
+INSERT INTO MENU (menu_name, menu_img, menu_price, cate_id)
+VALUES (N'Cơm cháy hải sản', 'comchayhaisan.jpg', 70000, 8);
+
+INSERT INTO MENU (menu_name, menu_img, menu_price, cate_id)
+VALUES (N'Chè bà ba', 'chebaba.jpg', 25000, 9);
+
+INSERT INTO MENU (menu_name, menu_img, menu_price, cate_id)
+VALUES (N'Sữa chua nếp cẩm', 'suachua.jpg', 25000, 9);
+
+INSERT INTO MENU (menu_name, menu_img, menu_price, cate_id)
+VALUES (N'Cà phê sữa dừa', 'caphe.jpg', 34000, 10);
+
+INSERT INTO MENU (menu_name, menu_img, menu_price, cate_id)
+VALUES (N'Trà tắc vải', 'tratacvai.jpg', 54000, 10);
+
+INSERT INTO MENU (menu_name, menu_img, menu_price, cate_id)
+VALUES (N'Hibicus xoài đào', 'hibicus.png', 34000, 10);
 
 DECLARE @i INT = 1
 
@@ -261,7 +284,6 @@ END
 GO
 
 DROP PROC USP_GetListBillByDate;
-
 
 CREATE PROC USP_UpdateAccount
 @userName NVARCHAR(50), @displayName NVARCHAR(50), @fullName NVARCHAR(50), @password NVARCHAR(10), @newPassword NVARCHAR(10)

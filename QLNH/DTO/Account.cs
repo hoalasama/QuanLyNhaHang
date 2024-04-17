@@ -10,8 +10,9 @@ namespace QLNH.DTO
 {
     public class Account
     {
-        public Account(string userName, string displayName, string fullName, string phone, int role, string passWord = null)
+        public Account(int id, string userName, string displayName, string fullName, string phone, int role, string passWord = null)
         {
+            this.ID = id;
             this.UserName = userName;
             this.DisplayName = displayName;
             this.FullName = fullName;
@@ -22,12 +23,22 @@ namespace QLNH.DTO
 
         public Account(DataRow row)
         {
+            this.ID = (int)row["user_id"];
             this.UserName = row["user_name"].ToString();
+            this.PassWord = row["user_password"].ToString();
             this.DisplayName = row["user_displayname"].ToString();
             this.FullName = row["user_fullname"].ToString();
             this.Phone = row["user_phone"].ToString();
             this.Role = (int)row["user_role"];
-            this.PassWord = row["user_password"].ToString();
+
+        }
+
+        private int iD;
+
+        public int ID
+        {
+            get { return iD; }
+            set { iD = value; }
         }
 
         private string userName;
