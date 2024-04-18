@@ -112,7 +112,7 @@ namespace QLNH
 
         void LoadListFood()
         {
-            string basePath = @"D:\Labnhóm\QuanLyNhaHang\img";
+            string basePath = @"D:\study\slide\2023-2024 - HKII\.net\groupproject\QuanLyNhaHang\img";
             foodList.DataSource = FoodDAO.Instance.GetListFood().Select(f =>
             {
                 f.FoodImg = Path.Combine(basePath, f.FoodImg);
@@ -297,7 +297,7 @@ namespace QLNH
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            string basePath = @"D:\Labnhóm\QuanLyNhaHang\img";
+            string basePath = @"D:\study\slide\2023-2024 - HKII\.net\groupproject\QuanLyNhaHang\img";
             foodList.DataSource = SearchFoodByName(txbSearchFoodName.Text).Select(f =>
             {
                 f.FoodImg = Path.Combine(basePath, f.FoodImg);
@@ -449,12 +449,6 @@ namespace QLNH
             string displayName = txbDisplayName.Text;
             string fullName = txbFullName.Text;
             string phone = txbPhone.Text;
-
-            if (AccountDAO.Instance.IsUserNameExists(userName))
-            {
-                MessageBox.Show("Tên user name đã tồn tại. Vui lòng điền tên khác!", "Lỗi trùng tên", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
 
             if (AccountDAO.Instance.InsertAccount(userName, passWord, displayName, fullName, phone))
             {

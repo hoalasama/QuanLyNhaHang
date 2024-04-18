@@ -1,0 +1,121 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\study\\slide\\2023-2024 - HKII\\.net\\groupproject\\QuanLyNhaHang\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{26BFB3A1-6213-4B11-897D-1029D64FCEEB}|QLNH\\QLNH.csproj|d:\\study\\slide\\2023-2024 - hkii\\.net\\groupproject\\quanlynhahang\\qlnh\\fadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26BFB3A1-6213-4B11-897D-1029D64FCEEB}|QLNH\\QLNH.csproj|solutionrelative:qlnh\\fadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26BFB3A1-6213-4B11-897D-1029D64FCEEB}|QLNH\\QLNH.csproj|D:\\study\\slide\\2023-2024 - HKII\\.net\\groupproject\\QuanLyNhaHang\\qlnh\\fadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{26BFB3A1-6213-4B11-897D-1029D64FCEEB}|QLNH\\QLNH.csproj|solutionrelative:qlnh\\fadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26BFB3A1-6213-4B11-897D-1029D64FCEEB}|QLNH\\QLNH.csproj|D:\\study\\slide\\2023-2024 - HKII\\.net\\groupproject\\QuanLyNhaHang\\qlnh\\dao\\fooddao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26BFB3A1-6213-4B11-897D-1029D64FCEEB}|QLNH\\QLNH.csproj|solutionrelative:qlnh\\dao\\fooddao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26BFB3A1-6213-4B11-897D-1029D64FCEEB}|QLNH\\QLNH.csproj|d:\\study\\slide\\2023-2024 - hkii\\.net\\groupproject\\quanlynhahang\\qlnh\\dao\\accountdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26BFB3A1-6213-4B11-897D-1029D64FCEEB}|QLNH\\QLNH.csproj|solutionrelative:qlnh\\dao\\accountdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26BFB3A1-6213-4B11-897D-1029D64FCEEB}|QLNH\\QLNH.csproj|D:\\study\\slide\\2023-2024 - HKII\\.net\\groupproject\\QuanLyNhaHang\\qlnh\\dao\\dataprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26BFB3A1-6213-4B11-897D-1029D64FCEEB}|QLNH\\QLNH.csproj|solutionrelative:qlnh\\dao\\dataprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26BFB3A1-6213-4B11-897D-1029D64FCEEB}|QLNH\\QLNH.csproj|D:\\study\\slide\\2023-2024 - HKII\\.net\\groupproject\\QuanLyNhaHang\\qlnh\\dto\\food.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26BFB3A1-6213-4B11-897D-1029D64FCEEB}|QLNH\\QLNH.csproj|solutionrelative:qlnh\\dto\\food.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AccountDAO.cs",
+              "DocumentMoniker": "D:\\study\\slide\\2023-2024 - HKII\\.net\\groupproject\\QuanLyNhaHang\\QLNH\\DAO\\AccountDAO.cs",
+              "RelativeDocumentMoniker": "QLNH\\DAO\\AccountDAO.cs",
+              "ToolTip": "D:\\study\\slide\\2023-2024 - HKII\\.net\\groupproject\\QuanLyNhaHang\\QLNH\\DAO\\AccountDAO.cs",
+              "RelativeToolTip": "QLNH\\DAO\\AccountDAO.cs",
+              "ViewState": "AQIAACoAAAAAAAAAAAAkwDYAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-18T02:53:28.528Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FoodDAO.cs",
+              "DocumentMoniker": "D:\\study\\slide\\2023-2024 - HKII\\.net\\groupproject\\QuanLyNhaHang\\QLNH\\DAO\\FoodDAO.cs",
+              "RelativeDocumentMoniker": "QLNH\\DAO\\FoodDAO.cs",
+              "ToolTip": "D:\\study\\slide\\2023-2024 - HKII\\.net\\groupproject\\QuanLyNhaHang\\QLNH\\DAO\\FoodDAO.cs",
+              "RelativeToolTip": "QLNH\\DAO\\FoodDAO.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-18T02:37:17.557Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Food.cs",
+              "DocumentMoniker": "D:\\study\\slide\\2023-2024 - HKII\\.net\\groupproject\\QuanLyNhaHang\\QLNH\\DTO\\Food.cs",
+              "RelativeDocumentMoniker": "QLNH\\DTO\\Food.cs",
+              "ToolTip": "D:\\study\\slide\\2023-2024 - HKII\\.net\\groupproject\\QuanLyNhaHang\\QLNH\\DTO\\Food.cs",
+              "RelativeToolTip": "QLNH\\DTO\\Food.cs",
+              "ViewState": "AQIAACcAAAAAAAAAAAAUwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-18T02:37:08.671Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "fAdmin.cs",
+              "DocumentMoniker": "D:\\study\\slide\\2023-2024 - HKII\\.net\\groupproject\\QuanLyNhaHang\\QLNH\\fAdmin.cs",
+              "RelativeDocumentMoniker": "QLNH\\fAdmin.cs",
+              "ToolTip": "D:\\study\\slide\\2023-2024 - HKII\\.net\\groupproject\\QuanLyNhaHang\\QLNH\\fAdmin.cs",
+              "RelativeToolTip": "QLNH\\fAdmin.cs",
+              "ViewState": "AQIAALYBAAAAAAAAAAASwMABAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-18T02:25:53.758Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "fAdmin.cs [Design]",
+              "DocumentMoniker": "D:\\study\\slide\\2023-2024 - HKII\\.net\\groupproject\\QuanLyNhaHang\\QLNH\\fAdmin.cs",
+              "RelativeDocumentMoniker": "QLNH\\fAdmin.cs",
+              "ToolTip": "D:\\study\\slide\\2023-2024 - HKII\\.net\\groupproject\\QuanLyNhaHang\\QLNH\\fAdmin.cs [Design]",
+              "RelativeToolTip": "QLNH\\fAdmin.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-18T02:23:44.534Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DataProvider.cs",
+              "DocumentMoniker": "D:\\study\\slide\\2023-2024 - HKII\\.net\\groupproject\\QuanLyNhaHang\\QLNH\\DAO\\DataProvider.cs",
+              "RelativeDocumentMoniker": "QLNH\\DAO\\DataProvider.cs",
+              "ToolTip": "D:\\study\\slide\\2023-2024 - HKII\\.net\\groupproject\\QuanLyNhaHang\\QLNH\\DAO\\DataProvider.cs",
+              "RelativeToolTip": "QLNH\\DAO\\DataProvider.cs",
+              "ViewState": "AQIAADUAAAAAAAAAAAASwDkAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-18T02:23:22.996Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
