@@ -57,7 +57,7 @@ namespace QLNH.DTO
 
         public bool InsertAccount(string userName, string passWord, string displayName, string fullName, string phone)
         {
-            int result = DataProvider.Instance.ExecuteNonQuery("exec USP_InsertAccount @userName , @passWord , @displayName , @fullName , @phone ", new object[] { userName, passWord, displayName, fullName, phone }) ;
+            int result = DataProvider.Instance.ExecuteNonQuery("exec USP_InsertAccount @userName , @passWord , @displayName , @fullName , @phone ", new object[] { userName, passWord, displayName, fullName, phone });
             return result > 0;
         }
 
@@ -69,7 +69,7 @@ namespace QLNH.DTO
 
         public bool UpdateAccountInfo(int id, string userName, string password, string displayName, string fullName, string phone)
         {
-            int result = DataProvider.Instance.ExecuteNonQuery("exec USP_UpdateAccountInfo @userID , @userName , @passWord , @displayName , @fullName , @phone ",
+            int result = DataProvider.Instance.ExecuteNonQuery("exec USP_UpdateAccountInfo @userID , @userName , @passWord , @displayName , @fullName , @phone",
                                                                new object[] { id, userName, password, displayName, fullName, phone });
             return result > 0;
         }
@@ -83,7 +83,7 @@ namespace QLNH.DTO
 
         public Account GetAccountByUserName(string userName)
         {
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM USERS WHERE user_name = '" + userName +"'");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM USERS WHERE user_name = '" + userName + "'");
 
             foreach (DataRow item in data.Rows)
             {

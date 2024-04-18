@@ -14,14 +14,15 @@ namespace QLNH.DAO
     {
         private static DataProvider instance;
 
-        public static DataProvider Instance {
+        public static DataProvider Instance
+        {
             get { if (instance == null) instance = new DataProvider(); return DataProvider.instance; }
             private set { DataProvider.instance = value; }
         }
 
         private DataProvider() { }
 
-        private string connectionSTR = "Data Source=Yen\\SQLEXPRESS;Initial Catalog=RESTAURANT;Integrated Security=True";
+        private string connectionSTR = "Data Source=YEN\\SQLEXPRESS;Initial Catalog=RESTAURANT;Integrated Security=True";
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
             DataTable data = new DataTable();
@@ -67,7 +68,7 @@ namespace QLNH.DAO
 
                 if (parameter != null)
                 {
-                    string[] listPara = query.Split(' '); 
+                    string[] listPara = query.Split(' ');
                     int i = 0;
                     foreach (string item in listPara)
                     {

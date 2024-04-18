@@ -358,4 +358,4 @@ BEGIN
   UPDATE USERS SET user_name = @userName, user_password = @passWord, user_displayname = @displayName, user_fullname = @fullName, user_phone = @phone WHERE user_id = @userID;
 END
 
-DROP PROC USP_USP_UpdateAccountInfo ;
+DROP PROC USP_UpdateAccountInfo ;

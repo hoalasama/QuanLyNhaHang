@@ -104,9 +104,6 @@
             this.btnUpdateAccount = new System.Windows.Forms.Button();
             this.btnAddAccount = new System.Windows.Forms.Button();
             this.panel15 = new System.Windows.Forms.Panel();
-            this.panel23 = new System.Windows.Forms.Panel();
-            this.txbRole = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
             this.txbDisplayName = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -163,7 +160,6 @@
             this.tpAccount.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel15.SuspendLayout();
-            this.panel23.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel16.SuspendLayout();
@@ -900,7 +896,6 @@
             // 
             // panel15
             // 
-            this.panel15.Controls.Add(this.panel23);
             this.panel15.Controls.Add(this.panel13);
             this.panel15.Controls.Add(this.panel1);
             this.panel15.Controls.Add(this.panel16);
@@ -911,32 +906,6 @@
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(398, 420);
             this.panel15.TabIndex = 1;
-            // 
-            // panel23
-            // 
-            this.panel23.Controls.Add(this.txbRole);
-            this.panel23.Controls.Add(this.label17);
-            this.panel23.Location = new System.Drawing.Point(6, 355);
-            this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(372, 39);
-            this.panel23.TabIndex = 8;
-            // 
-            // txbRole
-            // 
-            this.txbRole.Location = new System.Drawing.Point(141, 6);
-            this.txbRole.Name = "txbRole";
-            this.txbRole.Size = new System.Drawing.Size(218, 22);
-            this.txbRole.TabIndex = 7;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(12, 6);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(75, 20);
-            this.label17.TabIndex = 0;
-            this.label17.Text = "Chức vụ:";
             // 
             // panel13
             // 
@@ -1166,8 +1135,6 @@
             this.tpAccount.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
             this.panel15.ResumeLayout(false);
-            this.panel23.ResumeLayout(false);
-            this.panel23.PerformLayout();
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -1278,9 +1245,6 @@
         private System.Windows.Forms.TextBox txbTableStatus;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Panel panel23;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox txbRole;
         private System.Windows.Forms.TextBox txbDisplayName;
         private System.Windows.Forms.TextBox txbPhone;
         private System.Windows.Forms.TextBox txbFullName;

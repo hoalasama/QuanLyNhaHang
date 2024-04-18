@@ -89,7 +89,7 @@ namespace QLNH
             txbFullName.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "FullName", true, DataSourceUpdateMode.Never));
             txbPhone.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "Phone", true, DataSourceUpdateMode.Never));
             txbPassword.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "PassWord", true, DataSourceUpdateMode.Never));
-            txbRole.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "Role", true, DataSourceUpdateMode.Never));
+           
         }
 
         void LoadCategoryToCombobox(ComboBox cb)
@@ -421,7 +421,6 @@ namespace QLNH
             }
 
         }
-
         private void btnDeleteTable_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(txbTableID.Text);
@@ -449,12 +448,6 @@ namespace QLNH
             string displayName = txbDisplayName.Text;
             string fullName = txbFullName.Text;
             string phone = txbPhone.Text;
-
-            if (AccountDAO.Instance.IsUserNameExists(userName))
-            {
-                MessageBox.Show("Tên user name đã tồn tại. Vui lòng điền tên khác!", "Lỗi trùng tên", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
 
             if (AccountDAO.Instance.InsertAccount(userName, passWord, displayName, fullName, phone))
             {
