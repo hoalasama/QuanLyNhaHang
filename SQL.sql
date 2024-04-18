@@ -327,3 +327,35 @@ END;
 GO
 
 DROP TRIGGER UTG_DeleteBillInfo;
+
+CREATE PROCEDURE USP_InsertAccount 
+(
+  @userName NVARCHAR(50),
+  @passWord NVARCHAR(10),
+  @displayName NVARCHAR(50),
+  @fullName NVARCHAR(100),
+  @phone VARCHAR(10)
+)
+AS
+BEGIN
+  INSERT INTO USERS (user_name, user_password, user_displayname, user_fullname, user_phone)
+  VALUES (@userName, @passWord, @displayName, @fullName, @phone);
+END
+
+DROP PROC USP_InsertAccount;
+
+CREATE PROCEDURE USP_UpdateAccountInfo 
+(
+	@userID int,
+	@userName NVARCHAR(50),
+	@passWord NVARCHAR(10),
+	@displayName NVARCHAR(50),
+	@fullName NVARCHAR(100),
+	@phone VARCHAR(10)
+)
+AS
+BEGIN
+  UPDATE USERS SET user_name = @userName, user_password = @passWord, user_displayname = @displayName, user_fullname = @fullName, user_phone = @phone WHERE user_id = @userID;
+END
+
+DROP PROC USP_USP_UpdateAccountInfo ;

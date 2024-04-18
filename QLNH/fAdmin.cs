@@ -12,6 +12,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace QLNH
@@ -449,11 +450,11 @@ namespace QLNH
             string fullName = txbFullName.Text;
             string phone = txbPhone.Text;
 
-            /*if (AccountDAO.Instance.IsUserNameExists(userName))
+            if (AccountDAO.Instance.IsUserNameExists(userName))
             {
-                MessageBox.Show("Tên tài khoản đã tồn tại. Vui lòng điền tên khác!", "Lỗi trùng tên", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Tên user name đã tồn tại. Vui lòng điền tên khác!", "Lỗi trùng tên", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-            }*/
+            }
 
             if (AccountDAO.Instance.InsertAccount(userName, passWord, displayName, fullName, phone))
             {
@@ -463,6 +464,49 @@ namespace QLNH
             else
             {
                 MessageBox.Show("Có lỗi khi thêm vào");
+            }
+        }
+
+        private void btnUpdateAccount_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(txbAccountID.Text);
+            string userName = txbUserName.Text;
+            string passWord = txbPassword.Text;
+            string displayName = txbDisplayName.Text;
+            string fullName = txbFullName.Text;
+            string phone = txbPhone.Text;
+
+            if (AccountDAO.Instance.UpdateAccountInfo(id, userName, passWord, displayName, fullName, phone))
+            {
+                MessageBox.Show("Chỉnh sửa thông tin thành công");
+                LoadListAccount();
+                if (updateAccount != null)
+                {
+                    updateAccount(this, new EventArgs());
+                }
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi khi chỉnh sửa");
+            }
+        }
+
+        private void btnDeleteAccount_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(txbAccountID.Text);
+
+            if (AccountDAO.Instance.DeleteAccount(id))
+            {
+                MessageBox.Show("Xóa thành công");
+                LoadListAccount();
+                if (deleteAccount != null)
+                {
+                    deleteAccount(this, new EventArgs());
+                }
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi khi xóa");
             }
         }
 
@@ -561,5 +605,6 @@ namespace QLNH
             add { updateAccount += value; }
             remove { updateAccount -= value; }
         }
+
     }
 }

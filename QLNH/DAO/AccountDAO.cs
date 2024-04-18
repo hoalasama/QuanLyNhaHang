@@ -36,7 +36,7 @@ namespace QLNH.DTO
         {
             List<Account> listAccount = new List<Account>();
 
-            string query = "SELECT *FROM USERS";
+            string query = "SELECT *FROM USERS WHERE user_role = 0";
 
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
@@ -57,14 +57,27 @@ namespace QLNH.DTO
 
         public bool InsertAccount(string userName, string passWord, string displayName, string fullName, string phone)
         {
-            string query = string.Format("INSERT USERS (user_name, user_password, user_displayname, user_fullname, user_phone) VALUES ({0}, {1}, N'{2}', N'{3}', {4})", userName, passWord, displayName, fullName, phone) ;
-            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            int result = DataProvider.Instance.ExecuteNonQuery("exec USP_InsertAccount @userName , @passWord , @displayName , @fullName , @phone ", new object[] { userName, passWord, displayName, fullName, phone }) ;
             return result > 0;
         }
 
         public bool UpdateAccount(string userName, string displayName, string fullName, string passWord, string newPassword)
         {
             int result = DataProvider.Instance.ExecuteNonQuery("exec USP_UpdateAccount @userName , @displayName , @fullName , @password , @newPassword ", new object[] { userName, displayName, fullName, passWord, newPassword });
+            return result > 0;
+        }
+
+        public bool UpdateAccountInfo(int id, string userName, string password, string displayName, string fullName, string phone)
+        {
+            int result = DataProvider.Instance.ExecuteNonQuery("exec USP_UpdateAccountInfo @userID , @userName , @passWord , @displayName , @fullName , @phone ",
+                                                               new object[] { id, userName, password, displayName, fullName, phone });
+            return result > 0;
+        }
+
+        public bool DeleteAccount(int id)
+        {
+            string query = string.Format("DELETE USERS WHERE user_id = {0}", id);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
 

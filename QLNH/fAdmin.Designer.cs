@@ -101,32 +101,32 @@
             this.panel14 = new System.Windows.Forms.Panel();
             this.btnShowAccount = new System.Windows.Forms.Button();
             this.btnDeleteAccount = new System.Windows.Forms.Button();
-            this.btnEditAccount = new System.Windows.Forms.Button();
+            this.btnUpdateAccount = new System.Windows.Forms.Button();
             this.btnAddAccount = new System.Windows.Forms.Button();
             this.panel15 = new System.Windows.Forms.Panel();
+            this.panel23 = new System.Windows.Forms.Panel();
+            this.txbRole = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.txbDisplayName = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txbPhone = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.panel16 = new System.Windows.Forms.Panel();
+            this.txbFullName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel17 = new System.Windows.Forms.Panel();
+            this.txbPassword = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel18 = new System.Windows.Forms.Panel();
+            this.txbUserName = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel19 = new System.Windows.Forms.Panel();
+            this.txbAccountID = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel20 = new System.Windows.Forms.Panel();
             this.dtgvAccount = new System.Windows.Forms.DataGridView();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.label16 = new System.Windows.Forms.Label();
-            this.panel23 = new System.Windows.Forms.Panel();
-            this.label17 = new System.Windows.Forms.Label();
-            this.txbAccountID = new System.Windows.Forms.TextBox();
-            this.txbUserName = new System.Windows.Forms.TextBox();
-            this.txbDisplayName = new System.Windows.Forms.TextBox();
-            this.txbPassword = new System.Windows.Forms.TextBox();
-            this.txbFullName = new System.Windows.Forms.TextBox();
-            this.txbPhone = new System.Windows.Forms.TextBox();
-            this.txbRole = new System.Windows.Forms.TextBox();
             this.tcAdmin.SuspendLayout();
             this.tpBill.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -163,6 +163,8 @@
             this.tpAccount.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel15.SuspendLayout();
+            this.panel23.SuspendLayout();
+            this.panel13.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel16.SuspendLayout();
             this.panel17.SuspendLayout();
@@ -170,8 +172,6 @@
             this.panel19.SuspendLayout();
             this.panel20.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAccount)).BeginInit();
-            this.panel13.SuspendLayout();
-            this.panel23.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcAdmin
@@ -851,7 +851,7 @@
             // 
             this.panel14.Controls.Add(this.btnShowAccount);
             this.panel14.Controls.Add(this.btnDeleteAccount);
-            this.panel14.Controls.Add(this.btnEditAccount);
+            this.panel14.Controls.Add(this.btnUpdateAccount);
             this.panel14.Controls.Add(this.btnAddAccount);
             this.panel14.Location = new System.Drawing.Point(11, 10);
             this.panel14.Name = "panel14";
@@ -876,15 +876,17 @@
             this.btnDeleteAccount.TabIndex = 2;
             this.btnDeleteAccount.Text = "Xóa";
             this.btnDeleteAccount.UseVisualStyleBackColor = true;
+            this.btnDeleteAccount.Click += new System.EventHandler(this.btnDeleteAccount_Click);
             // 
-            // btnEditAccount
+            // btnUpdateAccount
             // 
-            this.btnEditAccount.Location = new System.Drawing.Point(121, 3);
-            this.btnEditAccount.Name = "btnEditAccount";
-            this.btnEditAccount.Size = new System.Drawing.Size(89, 27);
-            this.btnEditAccount.TabIndex = 1;
-            this.btnEditAccount.Text = "Sửa";
-            this.btnEditAccount.UseVisualStyleBackColor = true;
+            this.btnUpdateAccount.Location = new System.Drawing.Point(121, 3);
+            this.btnUpdateAccount.Name = "btnUpdateAccount";
+            this.btnUpdateAccount.Size = new System.Drawing.Size(89, 27);
+            this.btnUpdateAccount.TabIndex = 1;
+            this.btnUpdateAccount.Text = "Sửa";
+            this.btnUpdateAccount.UseVisualStyleBackColor = true;
+            this.btnUpdateAccount.Click += new System.EventHandler(this.btnUpdateAccount_Click);
             // 
             // btnAddAccount
             // 
@@ -910,6 +912,58 @@
             this.panel15.Size = new System.Drawing.Size(398, 420);
             this.panel15.TabIndex = 1;
             // 
+            // panel23
+            // 
+            this.panel23.Controls.Add(this.txbRole);
+            this.panel23.Controls.Add(this.label17);
+            this.panel23.Location = new System.Drawing.Point(6, 355);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(372, 39);
+            this.panel23.TabIndex = 8;
+            // 
+            // txbRole
+            // 
+            this.txbRole.Location = new System.Drawing.Point(141, 6);
+            this.txbRole.Name = "txbRole";
+            this.txbRole.Size = new System.Drawing.Size(218, 22);
+            this.txbRole.TabIndex = 7;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(12, 6);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(75, 20);
+            this.label17.TabIndex = 0;
+            this.label17.Text = "Chức vụ:";
+            // 
+            // panel13
+            // 
+            this.panel13.Controls.Add(this.txbDisplayName);
+            this.panel13.Controls.Add(this.label16);
+            this.panel13.Location = new System.Drawing.Point(6, 122);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(372, 39);
+            this.panel13.TabIndex = 7;
+            // 
+            // txbDisplayName
+            // 
+            this.txbDisplayName.Location = new System.Drawing.Point(141, 6);
+            this.txbDisplayName.Name = "txbDisplayName";
+            this.txbDisplayName.Size = new System.Drawing.Size(218, 22);
+            this.txbDisplayName.TabIndex = 7;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(12, 6);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(100, 20);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "Tên hiển thị:";
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.txbPhone);
@@ -918,6 +972,13 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(372, 39);
             this.panel1.TabIndex = 6;
+            // 
+            // txbPhone
+            // 
+            this.txbPhone.Location = new System.Drawing.Point(141, 6);
+            this.txbPhone.Name = "txbPhone";
+            this.txbPhone.Size = new System.Drawing.Size(218, 22);
+            this.txbPhone.TabIndex = 7;
             // 
             // label10
             // 
@@ -938,6 +999,13 @@
             this.panel16.Size = new System.Drawing.Size(372, 39);
             this.panel16.TabIndex = 5;
             // 
+            // txbFullName
+            // 
+            this.txbFullName.Location = new System.Drawing.Point(141, 6);
+            this.txbFullName.Name = "txbFullName";
+            this.txbFullName.Size = new System.Drawing.Size(218, 22);
+            this.txbFullName.TabIndex = 7;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -956,6 +1024,13 @@
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(372, 39);
             this.panel17.TabIndex = 4;
+            // 
+            // txbPassword
+            // 
+            this.txbPassword.Location = new System.Drawing.Point(141, 6);
+            this.txbPassword.Name = "txbPassword";
+            this.txbPassword.Size = new System.Drawing.Size(218, 22);
+            this.txbPassword.TabIndex = 8;
             // 
             // label6
             // 
@@ -976,6 +1051,13 @@
             this.panel18.Size = new System.Drawing.Size(372, 39);
             this.panel18.TabIndex = 3;
             // 
+            // txbUserName
+            // 
+            this.txbUserName.Location = new System.Drawing.Point(141, 6);
+            this.txbUserName.Name = "txbUserName";
+            this.txbUserName.Size = new System.Drawing.Size(218, 22);
+            this.txbUserName.TabIndex = 7;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -994,6 +1076,13 @@
             this.panel19.Name = "panel19";
             this.panel19.Size = new System.Drawing.Size(372, 39);
             this.panel19.TabIndex = 2;
+            // 
+            // txbAccountID
+            // 
+            this.txbAccountID.Location = new System.Drawing.Point(141, 6);
+            this.txbAccountID.Name = "txbAccountID";
+            this.txbAccountID.Size = new System.Drawing.Size(218, 22);
+            this.txbAccountID.TabIndex = 6;
             // 
             // label8
             // 
@@ -1021,93 +1110,6 @@
             this.dtgvAccount.RowHeadersWidth = 51;
             this.dtgvAccount.Size = new System.Drawing.Size(449, 420);
             this.dtgvAccount.TabIndex = 0;
-            // 
-            // panel13
-            // 
-            this.panel13.Controls.Add(this.txbDisplayName);
-            this.panel13.Controls.Add(this.label16);
-            this.panel13.Location = new System.Drawing.Point(6, 122);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(372, 39);
-            this.panel13.TabIndex = 7;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(12, 6);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(100, 20);
-            this.label16.TabIndex = 0;
-            this.label16.Text = "Tên hiển thị:";
-            // 
-            // panel23
-            // 
-            this.panel23.Controls.Add(this.txbRole);
-            this.panel23.Controls.Add(this.label17);
-            this.panel23.Location = new System.Drawing.Point(6, 355);
-            this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(372, 39);
-            this.panel23.TabIndex = 8;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(12, 6);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(75, 20);
-            this.label17.TabIndex = 0;
-            this.label17.Text = "Chức vụ:";
-            // 
-            // txbAccountID
-            // 
-            this.txbAccountID.Location = new System.Drawing.Point(141, 6);
-            this.txbAccountID.Name = "txbAccountID";
-            this.txbAccountID.Size = new System.Drawing.Size(218, 22);
-            this.txbAccountID.TabIndex = 6;
-            // 
-            // txbUserName
-            // 
-            this.txbUserName.Location = new System.Drawing.Point(141, 6);
-            this.txbUserName.Name = "txbUserName";
-            this.txbUserName.Size = new System.Drawing.Size(218, 22);
-            this.txbUserName.TabIndex = 7;
-            // 
-            // txbDisplayName
-            // 
-            this.txbDisplayName.Location = new System.Drawing.Point(141, 6);
-            this.txbDisplayName.Name = "txbDisplayName";
-            this.txbDisplayName.Size = new System.Drawing.Size(218, 22);
-            this.txbDisplayName.TabIndex = 7;
-            // 
-            // txbPassword
-            // 
-            this.txbPassword.Location = new System.Drawing.Point(141, 6);
-            this.txbPassword.Name = "txbPassword";
-            this.txbPassword.Size = new System.Drawing.Size(218, 22);
-            this.txbPassword.TabIndex = 8;
-            // 
-            // txbFullName
-            // 
-            this.txbFullName.Location = new System.Drawing.Point(141, 6);
-            this.txbFullName.Name = "txbFullName";
-            this.txbFullName.Size = new System.Drawing.Size(218, 22);
-            this.txbFullName.TabIndex = 7;
-            // 
-            // txbPhone
-            // 
-            this.txbPhone.Location = new System.Drawing.Point(141, 6);
-            this.txbPhone.Name = "txbPhone";
-            this.txbPhone.Size = new System.Drawing.Size(218, 22);
-            this.txbPhone.TabIndex = 7;
-            // 
-            // txbRole
-            // 
-            this.txbRole.Location = new System.Drawing.Point(141, 6);
-            this.txbRole.Name = "txbRole";
-            this.txbRole.Size = new System.Drawing.Size(218, 22);
-            this.txbRole.TabIndex = 7;
             // 
             // fAdmin
             // 
@@ -1164,6 +1166,10 @@
             this.tpAccount.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
             this.panel15.ResumeLayout(false);
+            this.panel23.ResumeLayout(false);
+            this.panel23.PerformLayout();
+            this.panel13.ResumeLayout(false);
+            this.panel13.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel16.ResumeLayout(false);
@@ -1176,10 +1182,6 @@
             this.panel19.PerformLayout();
             this.panel20.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAccount)).EndInit();
-            this.panel13.ResumeLayout(false);
-            this.panel13.PerformLayout();
-            this.panel23.ResumeLayout(false);
-            this.panel23.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1222,7 +1224,7 @@
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Button btnShowAccount;
         private System.Windows.Forms.Button btnDeleteAccount;
-        private System.Windows.Forms.Button btnEditAccount;
+        private System.Windows.Forms.Button btnUpdateAccount;
         private System.Windows.Forms.Button btnAddAccount;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Panel panel16;
